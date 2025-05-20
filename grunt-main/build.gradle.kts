@@ -4,7 +4,7 @@ import org.jetbrains.kotlin.gradle.utils.extendsFrom
 plugins {
     java
     kotlin("jvm")
-    id("dev.luna5ama.jar-optimizer")
+//    id("dev.luna5ama.jar-optimizer")
 }
 
 repositories {
@@ -86,11 +86,11 @@ tasks {
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
         archiveClassifier.set("full")
     }
-    val optimizeFatJar = jarOptimizer.register(
-        fatJar,
-        "net", "org", "com"
-    )
-    artifacts {
-        archives(optimizeFatJar)
-    }
+//    val optimizeFatJar = jarOptimizer.register(
+//        fatJar,
+//        "net", "org", "com"
+//    )
+//    artifacts {
+//        archives(optimizeFatJar)
+//    }
 }

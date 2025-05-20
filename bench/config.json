@@ -1,7 +1,7 @@
 {
   "Settings": {
-    "Input": "TEST.jar",
-    "Output": "TEST-obf.jar",
+    "Input": "D:\\desktop\\obf-test-1.0-SNAPSHOT.jar",
+    "Output": "D:\\desktop\\obf-test-1.0-SNAPSHOT-obf.jar",
     "Libraries": [],
     "Exclusions": [],
     "MixinPackage": [
@@ -25,7 +25,7 @@
     "DarkTheme": true
   },
   "SourceDebugRemove": {
-    "Enabled": true,
+    "Enabled": false,
     "SourceDebug": true,
     "LineDebug": true,
     "RenameSourceDebug": false,
@@ -33,12 +33,12 @@
       "114514.java",
       "1919810.kt",
       "69420.java",
-      "‰Ω†Â¶àÊ≠ª‰∫Ü.kt"
+      "ƒ„¬ËÀ¿¡À.kt"
     ],
     "Exclusion": []
   },
   "Shrinking": {
-    "Enabled": true,
+    "Enabled": false,
     "RemoveInnerClass": true,
     "RemoveUnusedLabel": true,
     "RemoveNOP": false,
@@ -48,7 +48,7 @@
     "Exclusion": []
   },
   "KotlinOptimizer": {
-    "Enabled": true,
+    "Enabled": false,
     "Annotations": true,
     "Intrinsics": true,
     "IntrinsicsRemoval": [
@@ -64,22 +64,22 @@
     "MetadataExclusion": []
   },
   "EnumOptimize": {
-    "Enabled": true,
+    "Enabled": false,
     "Exclusion": []
   },
   "DeadCodeRemove": {
-    "Enabled": true,
+    "Enabled": false,
     "Exclusion": []
   },
   "ClonedClass": {
-    "Enabled": true,
+    "Enabled": false,
     "Count": 0,
     "Suffix": "-cloned",
     "RemoveAnnotations": true,
     "Exclusion": []
   },
   "TrashClass": {
-    "Enabled": true,
+    "Enabled": false,
     "Package": "net/spartanb312/obf/",
     "Prefix": "Trash",
     "Count": 0
@@ -98,24 +98,24 @@
     "Exclusion": []
   },
   "HideDeclaredFields": {
-    "Enabled": true,
+    "Enabled": false,
     "Exclusion": []
   },
   "ReflectionSupport": {
-    "Enabled": true,
+    "Enabled": false,
     "PrintLog": true,
     "Class": true,
     "Method": true,
     "Field": true
   },
   "StringEncrypt": {
-    "Enabled": true,
+    "Enabled": false,
     "Arrayed": false,
     "ReplaceInvokeDynamics": true,
     "Exclusion": []
   },
   "NumberEncrypt": {
-    "Enabled": true,
+    "Enabled": false,
     "Intensity": 1,
     "FloatingPoint": true,
     "Arrayed": false,
@@ -123,8 +123,8 @@
     "Exclusion": []
   },
   "ArithmeticEncrypt": {
-    "Enabled": true,
-    "Intensity": 1,
+    "Enabled": false,
+    "Intensity": 2,
     "MaxInsnSize": 16384,
     "Exclusion": []
   },
@@ -132,37 +132,37 @@
     "Enabled": true,
     "Intensity": 1,
     "ExecuteBeforeEncrypt": false,
-    "SwitchExtractor": true,
+    "SwitchExtractor": false,
     "ExtractRate": 30,
-    "BogusConditionJump": true,
+    "BogusConditionJump": false,
     "GotoReplaceRate": 80,
-    "MangledCompareJump": true,
+    "MangledCompareJump": false,
     "IfReplaceRate": 50,
     "IfICompareReplaceRate": 100,
-    "SwitchProtect": true,
+    "SwitchProtect": false,
     "ProtectRate": 30,
-    "MutateJumps": true,
+    "MutateJumps": false,
     "MutateRate": 10,
-    "TableSwitchJump": true,
+    "TableSwitchJump": false,
     "SwitchReplaceRate": 30,
     "MaxSwitchCase": 5,
-    "ChaosSwitch": true,
-    "ReverseExistedIf": true,
+    "ChaosSwitch": false,
+    "ReverseExistedIf": false,
     "ReverseChance": 50,
-    "TrappedSwitchCase": true,
+    "TrappedSwitchCase": false,
     "TrapChance": 50,
     "ArithmeticExprBuilder": true,
     "BuilderIntensity": 1,
     "JunkBuilderParameter": true,
     "BuilderNativeAnnotation": false,
-    "UseLocalVar": true,
-    "JunkCode": true,
+    "UseLocalVar": false,
+    "JunkCode": false,
     "MaxJunkCode": 2,
-    "ExpandedJunkCode": true,
+    "ExpandedJunkCode": false,
     "Exclusion": []
   },
   "ConstBuilder": {
-    "Enabled": true,
+    "Enabled": false,
     "NumberSwitchBuilder": true,
     "SplitLong": true,
     "HeavyEncrypt": false,
@@ -172,7 +172,7 @@
     "Exclusion": []
   },
   "ConstPollEncrypt": {
-    "Enabled": true,
+    "Enabled": false,
     "Integer": true,
     "Long": true,
     "Float": true,
@@ -184,12 +184,12 @@
     "Exclusion": []
   },
   "RedirectStringEquals": {
-    "Enabled": true,
+    "Enabled": false,
     "IgnoreCase": true,
     "Exclusion": []
   },
   "FieldScramble": {
-    "Enabled": true,
+    "Enabled": false,
     "Intensity": 1,
     "ReplacePercentage": 10,
     "RandomName": false,
@@ -203,7 +203,7 @@
     "ExcludedFieldName": []
   },
   "MethodScramble": {
-    "Enabled": true,
+    "Enabled": false,
     "ReplacePercentage": 10,
     "GenerateOuterClass": false,
     "RandomCall": true,
@@ -212,7 +212,7 @@
     "ExcludedMethodName": []
   },
   "NativeCandidate": {
-    "Enabled": true,
+    "Enabled": false,
     "NativeAnnotation": "Lnet/spartanb312/example/Native;",
     "SearchCandidate": true,
     "UpCallLimit": 0,
@@ -223,11 +223,11 @@
     ]
   },
   "SyntheticBridge": {
-    "Enabled": true,
+    "Enabled": false,
     "Exclusion": []
   },
   "LocalVariableRename": {
-    "Enabled": true,
+    "Enabled": false,
     "Dictionary": "Alphabet",
     "ThisReference": false,
     "DeleteLocalVars": false,
@@ -253,7 +253,7 @@
     ]
   },
   "MethodRenameKr": {
-    "Enabled": true,
+    "Enabled": false,
     "Mode": "Fast",
     "Enums": true,
     "Interfaces": false,
@@ -287,7 +287,7 @@
     ]
   },
   "FieldRenameKr": {
-    "Enabled": true,
+    "Enabled": false,
     "Dictionary": "Alphabet",
     "RandomKeywordPrefix": false,
     "Prefix": "",
@@ -303,7 +303,7 @@
     ]
   },
   "ClassRename": {
-    "Enabled": true,
+    "Enabled": false,
     "Dictionary": "Alphabet",
     "Parent": "net/spartanb312/obf/",
     "Prefix": "",
@@ -343,7 +343,7 @@
     ]
   },
   "InvokeDynamic": {
-    "Enabled": true,
+    "Enabled": false,
     "ReplacePercentage": 10,
     "HeavyProtection": false,
     "MetadataClass": "net/spartanb312/grunt/GruntMetadata",
@@ -354,7 +354,7 @@
     "Exclusion": []
   },
   "ShuffleMembers": {
-    "Enabled": true,
+    "Enabled": false,
     "Methods": true,
     "Fields": true,
     "Annotations": true,
@@ -362,12 +362,12 @@
     "Exclusion": []
   },
   "Crasher": {
-    "Enabled": true,
+    "Enabled": false,
     "Random": false,
     "Exclusion": []
   },
   "Watermark": {
-    "Enabled": true,
+    "Enabled": false,
     "Names": [
       "I AM WATERMARK",
       "CYKA BLYAT",
