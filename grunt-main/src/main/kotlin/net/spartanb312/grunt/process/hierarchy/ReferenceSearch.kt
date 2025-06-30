@@ -1,5 +1,6 @@
 package net.spartanb312.grunt.process.hierarchy
 
+import org.objectweb.asm.Type
 import org.objectweb.asm.tree.ClassNode
 import org.objectweb.asm.tree.FieldInsnNode
 import org.objectweb.asm.tree.MethodInsnNode
@@ -17,19 +18,33 @@ object ReferenceSearch {
 
     fun checkMissing(methodNode: MethodNode, hierarchy: Hierarchy): List<Hierarchy.ClassInfo> {
         val missingReference = mutableListOf<Hierarchy.ClassInfo>()
+
+        fun addMissingIfBroken(info: Hierarchy.ClassInfo) {
+            if (info.isBroken) missingReference.add(info)
+        }
+
         methodNode.instructions.forEach { insn ->
             if (insn is FieldInsnNode) {
-                val name = if (!insn.owner.startsWith("[")) insn.owner
-                else insn.owner.substringAfterLast("[").removePrefix("L").removeSuffix(";")
-                val info = hierarchy.getClassInfo(name)
-                if (info.isBroken) missingReference.add(info)
+                if (insn.owner[0] == '[') {
+                    val type = Type.getType(insn.owner.substringAfterLast("["))
 
+                    if (type.sort == Type.OBJECT) {
+                        addMissingIfBroken(hierarchy.getClassInfo(type.internalName))
+                    }
+                } else {
+                    addMissingIfBroken(hierarchy.getClassInfo(insn.owner))
+                }
             }
             if (insn is MethodInsnNode) {
-                val name = if (!insn.owner.startsWith("[")) insn.owner
-                else insn.owner.substringAfterLast("[").removePrefix("L").removeSuffix(";")
-                val info = hierarchy.getClassInfo(name)
-                if (info.isBroken) missingReference.add(info)
+                if (insn.owner[0] == '[') {
+                    val type = Type.getType(insn.owner.substringAfterLast("["))
+
+                    if (type.sort == Type.OBJECT) {
+                        addMissingIfBroken(hierarchy.getClassInfo(type.internalName))
+                    }
+                } else {
+                    addMissingIfBroken(hierarchy.getClassInfo(insn.owner))
+                }
             }
         }
         return missingReference
